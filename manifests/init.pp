@@ -144,14 +144,14 @@ class smokeping (
   Optional[String[1]] $slave_color = undef,
   String[1] $master_name = 'default',
   String[1] $owner = 'Peter Random',
-  Stdlib::Email $contact = 'root@localhost',
+  String[1] $contact = 'root@localhost',
   Optional[Stdlib::Host] $mailhost = undef,
-  Stdlib::Syslogfacility $syslogfacility = 'local0',
+  String[1] $syslogfacility = 'local0',
   String[1] $syslogpriority = 'info',
   Array[Hash] $probes = [],
   String[1] $default_probe = 'FPing',
-  Stdlib::Email $alerts_to = 'root@localhost',
-  Stdlib::Email $alerts_from = 'root@localhost',
+  String[1] $alerts_to = 'root@localhost',
+  String[1] $alerts_from = 'root@localhost',
   Array[Hash] $alerts = [
     {
       name        => 'someloss',
