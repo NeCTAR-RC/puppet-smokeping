@@ -101,13 +101,13 @@ class smokeping::config {
     'slave': {
       # Check if slave_display_name is unset.
       # --> use FQDN if not set.
-      if $smokeping::slave_display_name == '' {
+      if $smokeping::slave_display_name == undef {
         $display_name = $facts['networking']['fqdn']
       } else {
         $display_name = $smokeping::slave_display_name
       }
 
-      if $smokeping::slave_color == '' {
+      if $smokeping::slave_color == undef {
         $slave_color = sprintf('%06d', fqdn_rand('999999'))
       } else {
         $slave_color = $smokeping::slave_color
