@@ -31,10 +31,11 @@ class smokeping::install {
     recurse => true,
   }
   file { $smokeping::path_imgcache:
-    ensure  => directory,
-    owner   => $smokeping::webserver_user,
-    group   => $smokeping::webserver_group,
-    require => Package['smokeping'],
-    recurse => true,
+    ensure    => directory,
+    owner     => $smokeping::webserver_user,
+    group     => $smokeping::webserver_group,
+    require   => Package['smokeping'],
+    recurse   => true,
+    max_files => 4096,
   }
 }
